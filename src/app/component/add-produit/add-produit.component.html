@@ -1,0 +1,73 @@
+<div class="formulaire">
+  <div>
+    <form [formGroup]="addProduit" (ngSubmit)="onAdd()">
+      <h2 *ngIf="hidden">Ajouter un Produit</h2>
+      <h2 *ngIf="hidden1">Confimer le Produit</h2>
+      <div class="mesInput">
+        <label for="nom">Nom :</label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          formControlName="nom"
+          placeholder="Nom du produit"
+          (focus)="enleverErreur('nom')"
+          [readonly]="readonly"
+        />
+        <div class="message">{{ nomError }}</div>
+      </div>
+      <div class="mesInput">
+        <label for="prix">Prix :</label>
+        <input
+          [readonly]="readonly"
+          type="number"
+          id="prix"
+          name="prix"
+          formControlName="prix"
+          placeholder="Prix"
+          (focus)="enleverErreur('prix')"
+        />
+        <div class="message">{{ prixError }}</div>
+      </div>
+
+      <div class="mesInput">
+        <label for="quantite">Quantité :</label>
+        <input
+          [readonly]="readonly"
+          type="number"
+          id="quantite"
+          name="quantite"
+          formControlName="quantite"
+          placeholder="Quantité"
+          (focus)="enleverErreur('quantite')"
+        />
+        <div class="message">{{ quantiteError }}</div>
+      </div>
+      <div class="position mesInput">
+        <label for="id_categorie">Catégorie :</label>
+        <select
+          class="position"
+          id="id_categorie"
+          name="id_categorie"
+          formControlName="id_categorie"
+          (focus)="enleverErreur('id_categorie')"
+        >
+          <option
+            *ngFor="let item of categorie"
+            [value]="item.id"
+            [disabled]="readonly"
+          >
+            {{ item.nom }}
+          </option>
+        </select>
+        <div class="message">{{ categorieError }}</div>
+      </div>
+      <div class="btnList">
+        <button *ngIf="hidden" (click)="changediv()">Add</button>
+        <button *ngIf="hidden" [routerLink]="'/Accueil'">Non</button>
+        <button *ngIf="hidden1" type="submit">Add</button>
+        <button *ngIf="hidden1" (click)="changediv()">Non</button>
+      </div>
+    </form>
+  </div>
+</div>

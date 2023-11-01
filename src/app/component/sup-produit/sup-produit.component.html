@@ -1,0 +1,19 @@
+<div *ngIf="produit">
+  <div class="formulaire">
+    <div *ngIf="produit">
+      <div (ngSubmit)="onSup()">
+        <h2>Supprimer un Produit</h2>
+        <div class="position">
+          <p>Confirmez la suppression de :</p>
+          <p class="big">{{ produit.nom }}</p>
+        </div>
+
+        <div class="btnList">
+          <button (click)="onSup()" type="submit">Oui</button>
+          <button [routerLink]="'/Accueil'">Non</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!produit" routerLink="#"></div>

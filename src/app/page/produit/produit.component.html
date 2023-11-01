@@ -1,0 +1,38 @@
+<div class="containBtn">
+  <button *ngIf="log" [routerLink]="'/Add-produit'" class="add blue">
+    Add
+  </button>
+</div>
+<div class="contain">
+  <table class="table">
+    <tr class="">
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Quantite</th>
+      <th *ngIf="log" scope="col">Action</th>
+    </tr>
+    <tr *ngFor="let produit of produits; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ produit.nom }}</td>
+      <td>{{ produit.prix }}</td>
+      <td>{{ produit.quantite }}</td>
+      <td *ngIf="log">
+        <button
+          *ngIf="log"
+          [routerLink]="['/Maj-produit/', produit.id]"
+          class="blue"
+        >
+          Modif
+        </button>
+        <button
+          *ngIf="log"
+          [routerLink]="['/Sup-produit/', produit.id]"
+          class="red"
+        >
+          suppr
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,48 @@
+h2 {
+  text-align: center;
+  width: 50vw;
+}
+.formulaire {
+  margin-top: 10vh;
+  width: 100vw;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btnList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 50vw;
+}
+
+input {
+  border: solid 1px;
+
+  width: 50vw;
+  height: 6vh;
+  color: black;
+}
+
+.message {
+  color: red;
+  font-size: x-small;
+}
+.mesInput {
+  margin-bottom: 2vw;
+}

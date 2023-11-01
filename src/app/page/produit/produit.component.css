@@ -1,0 +1,50 @@
+.contain {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 4vh; */
+  margin: 1vh 1vw 0 1vw;
+
+  height: 100vh;
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+table {
+  margin: 0;
+}
+
+th,
+td {
+  text-align: center;
+  border: solid 1px;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+button {
+  align-self: center;
+  margin: 5px;
+}
+.containBtn {
+  min-width: 10vw;
+  margin-left: 2vw;
+}
+
+.add {
+  padding: 2vh 3vw;
+}
+.blue {
+  color: #fff;
+  background-color: blue;
+}
+
+.red {
+  color: #fff;
+  background-color: red;
+}
